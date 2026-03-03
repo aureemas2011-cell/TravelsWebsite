@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Philosopher:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a1c52; /* Aureemas Deep Blue */
+            --primary: #1a1c52;
             --gold: #ffc107;
             --ocean: #00b4d8;
             --white: #ffffff;
@@ -34,7 +34,7 @@
         }
 
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo img { height: 55px; border-radius: 6px; }
+        .logo img { height: 55px; border-radius: 6px; width: auto; }
         .logo h1 { font-family: 'Philosopher', sans-serif; font-size: 1.4rem; color: var(--primary); text-transform: uppercase; line-height: 1; }
 
         .nav-links { display: flex; gap: 25px; }
@@ -44,8 +44,9 @@
         /* --- Hero Section --- */
         #home {
             height: 100vh;
+            /* Using a reliable web background for the hero to ensure the site looks good immediately */
             background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)), 
-                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');
+                        url('https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center; background-attachment: fixed;
             display: flex; align-items: center; justify-content: center; text-align: center; color: white;
         }
@@ -60,48 +61,42 @@
             margin: 0 20px;
         }
 
-        .hero-box h2 { font-family: 'Philosopher', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 15px; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .hero-box p { font-size: 1.3rem; margin-bottom: 35px; text-shadow: 0 2px 5px rgba(0,0,0,0.5); font-weight: 300; }
+        .hero-box h2 { font-family: 'Philosopher', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 15px; }
+        .hero-box p { font-size: 1.3rem; margin-bottom: 35px; font-weight: 300; }
 
-        /* --- Sections & Global UI --- */
+        /* --- Sections --- */
         section { padding: 100px 5%; }
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-header h2 { font-family: 'Philosopher', sans-serif; font-size: 2.8rem; color: var(--primary); }
         .line { width: 80px; height: 5px; background: var(--gold); margin: 15px auto; border-radius: 5px; }
 
         /* --- Destinations --- */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; max-width: 1240px; margin: auto; }
-        .dest-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; }
-        .dest-card:hover { transform: translateY(-12px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); }
-        .dest-img { height: 260px; width: 100%; object-fit: cover; }
-        .dest-info { padding: 30px; }
-        .dest-info h3 { color: var(--primary); margin-bottom: 12px; font-size: 1.5rem; }
-        .dest-info p { font-size: 0.95rem; color: #636e72; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; max-width: 1200px; margin: auto; }
+        .dest-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .dest-img { height: 260px; width: 100%; object-fit: cover; display: block; background: #eee; }
+        .dest-info { padding: 25px; }
+        .dest-info h3 { color: var(--primary); margin-bottom: 10px; }
 
-        /* --- Itinerary Styling --- */
+        /* --- Itinerary --- */
         .itinerary-container { max-width: 900px; margin: auto; }
-        .itinerary-item { display: flex; margin-bottom: 30px; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .day-badge { padding: 20px; min-width: 100px; text-align: center; display: flex; flex-direction: column; justify-content: center; color: white; }
-        .itinerary-text { padding: 25px; }
-        .itinerary-text h4 { color: var(--primary); font-size: 1.3rem; margin-bottom: 8px; }
+        .itinerary-item { display: flex; margin-bottom: 25px; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .day-badge { padding: 20px; min-width: 100px; text-align: center; color: white; display: flex; flex-direction: column; justify-content: center; }
+        .itinerary-text { padding: 20px; }
 
-        /* --- Features --- */
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; max-width: 1100px; margin: auto; text-align: center; }
+        /* --- Services --- */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1100px; margin: auto; text-align: center; }
         .f-item { padding: 40px 20px; background: white; border-radius: 20px; border: 1px solid #eee; }
         .f-item span { font-size: 3rem; display: block; margin-bottom: 15px; }
 
         /* --- Contact --- */
-        #contact { background: var(--primary); color: white; border-radius: 60px 60px 0 0; text-align: center; }
-        .contact-btn { background: #25d366; color: white; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 25px; transition: 0.3s; }
-        .contact-btn:hover { transform: scale(1.05); }
+        #contact { background: var(--primary); color: white; text-align: center; border-radius: 50px 50px 0 0; }
+        .contact-btn { background: #25d366; color: white; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
 
-        footer { text-align:center; padding:40px; background:#0d0e2b; color:#777; font-size:0.9rem; }
+        footer { text-align: center; padding: 30px; background: #0d0e2b; color: #777; font-size: 0.9rem; }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            #home { background-attachment: scroll; }
             .itinerary-item { flex-direction: column; }
-            .day-badge { padding: 15px; }
         }
     </style>
 </head>
@@ -138,28 +133,28 @@
         </div>
         <div class="grid">
             <div class="dest-card">
-                <img src="https://images.unsplash.com/photo-1589133644743-5744be3b6aa7?auto=format&fit=crop&w=600&q=80" class="dest-img" alt="Havelock">
+                <img src="Images/Havelock.jpg" class="dest-img" alt="Havelock">
                 <div class="dest-info">
                     <h3>🏝️ Havelock Island</h3>
                     <p>The heart of Andaman tourism. Home to Radhanagar Beach and world-class Scuba Diving sites.</p>
                 </div>
             </div>
             <div class="dest-card">
-                <img src="https://images.unsplash.com/photo-1570789210967-2cac24afeb00?auto=format&fit=crop&w=600&q=80" class="dest-img" alt="Port Blair">
+                <img src="Images/Port-Blair.webp" class="dest-img" alt="Port Blair">
                 <div class="dest-info">
                     <h3>🏛️ Port Blair</h3>
                     <p>Experience the history of Cellular Jail and the vibrant local culture of the island capital.</p>
                 </div>
             </div>
             <div class="dest-card">
-                <img src="https://images.unsplash.com/photo-1544551763-47a0159f963f?auto=format&fit=crop&w=600&q=80" class="dest-img" alt="Neil Island">
+                <img src="Images/Rossisland.jpg" class="dest-img" alt="Ross Island">
                 <div class="dest-info">
-                    <h3>🐚 Neil Island</h3>
-                    <p>A tranquil paradise perfect for sunset views at Laxmanpur Beach and natural rock formations.</p>
+                    <h3>⚓ Ross Island</h3>
+                    <p>A historic island featuring British-era ruins and friendly deer roaming the grounds.</p>
                 </div>
             </div>
             <div class="dest-card">
-                <img src="https://images.unsplash.com/photo-1621353130101-70068565da24?auto=format&fit=crop&w=600&q=80" class="dest-img" alt="Baratang">
+                <img src="Images/Baratang.webp" class="dest-img" alt="Baratang">
                 <div class="dest-info">
                     <h3>🛶 Baratang Island</h3>
                     <p>Journey through dense mangrove creeks to witness the ancient Limestone Caves.</p>
@@ -170,84 +165,114 @@
 
     <section id="itinerary" style="background: #f0f4f8;">
         <div class="section-header">
-            <h2>Sample 5-Day Itinerary</h2>
+            <h2>Your 7-Day Specialized Plan</h2>
             <div class="line"></div>
         </div>
         <div class="itinerary-container">
             <div class="itinerary-item">
                 <div class="day-badge" style="background: var(--primary);">
-                    <span style="font-weight: 800;">DAY</span><span style="font-size: 2rem; font-weight: 800;">01</span>
+                    <span style="font-weight:800;">DAY</span><span style="font-size:2rem; font-weight:800;">01</span>
                 </div>
                 <div class="itinerary-text">
-                    <h4>Arrival & Cellular Jail</h4>
-                    <p>Arrival at Port Blair. Check-in and visit the historic Cellular Jail. Evening Light & Sound Show.</p>
+                    <h4>Arrival & Jail Visit</h4>
+                    <p>Arrival at Port Blair. Check-in and visit the historic Cellular Jail and Carbyn's Cove Beach.</p>
                 </div>
             </div>
             <div class="itinerary-item">
                 <div class="day-badge" style="background: var(--ocean);">
-                    <span style="font-weight: 800;">DAY</span><span style="font-size: 2rem; font-weight: 800;">02</span>
+                    <span style="font-weight:800;">DAY</span><span style="font-size:2rem; font-weight:800;">02</span>
                 </div>
                 <div class="itinerary-text">
-                    <h4>Havelock Island Cruise</h4>
-                    <p>Take the private cruise to Havelock. Afternoon at Radhanagar Beach, rated the best in Asia.</p>
+                    <h4>North Bay & Ross Island</h4>
+                    <p>Explore the ruins of Ross Island and enjoy water activities at North Bay Island.</p>
                 </div>
             </div>
             <div class="itinerary-item">
                 <div class="day-badge" style="background: var(--primary);">
-                    <span style="font-weight: 800;">DAY</span><span style="font-size: 2rem; font-weight: 800;">03</span>
+                    <span style="font-weight:800;">DAY</span><span style="font-size:2rem; font-weight:800;">03</span>
                 </div>
                 <div class="itinerary-text">
-                    <h4>Water Sports Adventure</h4>
-                    <p>Visit Elephant Beach for snorkeling and sea walking. Experience the vibrant coral reefs.</p>
+                    <h4>Havelock Island</h4>
+                    <p>Take the cruise to Havelock and relax at the world-famous Radhanagar Beach.</p>
                 </div>
             </div>
             <div class="itinerary-item">
                 <div class="day-badge" style="background: var(--ocean);">
-                    <span style="font-weight: 800;">DAY</span><span style="font-size: 2rem; font-weight: 800;">04</span>
+                    <span style="font-weight:800;">DAY</span><span style="font-size:2rem; font-weight:800;">04</span>
                 </div>
                 <div class="itinerary-text">
-                    <h4>Neil Island Relaxation</h4>
-                    <p>Ferry to Neil Island. Visit Laxmanpur Beach for sunset and the Natural Rock Bridge.</p>
+                    <h4>Neil Island</h4>
+                    <p>Explore the natural rock bridge and quiet beaches of Neil Island.</p>
+                </div>
+            </div>
+            <div class="itinerary-item">
+                <div class="day-badge" style="background: var(--primary);">
+                    <span style="font-weight:800;">DAY</span><span style="font-size:2rem; font-weight:800;">05</span>
+                </div>
+                <div class="itinerary-text">
+                    <h4>Baratang Island</h4>
+                    <p>Adventure trip to see the Limestone Caves and Mangrove creeks.</p>
+                </div>
+            </div>
+            <div class="itinerary-item">
+                <div class="day-badge" style="background: var(--ocean);">
+                    <span style="font-weight:800;">DAY</span><span style="font-size:2rem; font-weight:800;">06</span>
+                </div>
+                <div class="itinerary-text">
+                    <h4>Chidiya Tapu</h4>
+                    <p>Visit the biological park and enjoy a beautiful sunset at Chidiya Tapu.</p>
                 </div>
             </div>
             <div class="itinerary-item">
                 <div class="day-badge" style="background: var(--gold); color: var(--primary);">
-                    <span style="font-weight: 800;">DAY</span><span style="font-size: 2rem; font-weight: 800;">05</span>
+                    <span style="font-weight:800;">DAY</span><span style="font-size:2rem; font-weight:800;">07</span>
                 </div>
                 <div class="itinerary-text">
                     <h4>Departure</h4>
-                    <p>Return to Port Blair for shopping at Aberdeen Bazaar before heading to the airport.</p>
+                    <p>Local shopping at Aberdeen Bazaar and transfer to airport for departure.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" style="background: #fff;">
+    <section id="services">
         <div class="section-header">
             <h2>Why Choose Aureemas?</h2>
             <div class="line"></div>
         </div>
         <div class="features">
-            <div class="f-item"><span>🚢</span><h4>Ferry Booking</h4><p>Confirmed tickets for luxury cruises like Makruzz.</p></div>
-            <div class="f-item"><span>🏨</span><h4>Premium Stays</h4><p>Hand-picked luxury resorts and 3-star hotels.</p></div>
-            <div class="f-item"><span>🚕</span><h4>Private Travel</h4><p>Your own dedicated AC vehicle for the whole trip.</p></div>
+            <div class="f-item">
+                <span>🏡</span>
+                <h4>Home Stay & Lodge</h4>
+                <p>Choice of comfortable AC or Non-AC rooms in local home stays and lodges.</p>
+            </div>
+            <div class="f-item">
+                <span>🚗</span>
+                <h4>Private AC Car</h4>
+                <p>Dedicated AC vehicle provided for all your sightseeing and transfers.</p>
+            </div>
+            <div class="f-item">
+                <span>🗺️</span>
+                <h4>Local Knowledge</h4>
+                <p>We are island specialists providing authentic experiences without the high agency costs.</p>
+            </div>
         </div>
     </section>
 
     <section id="contact">
         <div class="section-header">
-            <h2 style="color:white">Get A Free Consultation</h2>
+            <h2 style="color:white">Connect With Us</h2>
             <div class="line"></div>
         </div>
-        <div style="margin-top:40px;">
+        <div style="margin-top:30px;">
             <h3>📞 +91 98955 45696</h3>
-            <p style="margin-top:10px; opacity:0.9;">aureemas2011@gmail.com</p>
-            <a href="https://wa.me/919895545696" class="contact-btn">Chat with an Expert</a>
+            <p style="margin-top:10px; opacity:0.8;">aureemas2011@gmail.com</p>
+            <a href="https://wa.me/919895545696" class="contact-btn">Message on WhatsApp</a>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 Aureemas Andaman Tours. All rights reserved. <br> Specializing in Island Memories.
+        &copy; 2026 Aureemas Andaman Tours.
     </footer>
 
 </body>
